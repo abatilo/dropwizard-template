@@ -20,7 +20,12 @@ public class BaseResourceFactory {
       super(config, env);
     }
 
+    private final SQSProcessor processor = new SQSProcessor();
+
     @Getter(AccessLevel.PUBLIC)
     private final RootResource rootResource = new RootResource();
+
+    @Getter(AccessLevel.PUBLIC)
+    private final SQSPuller puller = new SQSPuller(processor);
   }
 }

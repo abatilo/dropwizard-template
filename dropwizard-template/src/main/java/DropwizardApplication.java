@@ -13,6 +13,7 @@ public class DropwizardApplication
     BaseResourceFactory.ResourceFactory resources =
       new BaseResourceFactory.ResourceFactory(config, env);
     env.jersey().register(resources.getRootResource());
+    env.lifecycle().manage(resources.getPuller());
   }
 
   @SneakyThrows
