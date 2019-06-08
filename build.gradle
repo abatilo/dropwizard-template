@@ -1,8 +1,8 @@
 ext {
-  guavaVersion = "23.0"
-  lombokVersion = "1.16.18"
-  dropWizardVersion = "1.1.4"
-  junitVersion = "4.12"
+  guavaVersion = "27.1-jre"
+  lombokVersion = "1.18.8"
+  dropWizardVersion = "1.3.12"
+  junitVersion = "5.4.2"
 }
 
 buildscript {
@@ -14,7 +14,7 @@ buildscript {
     // For building the entire project, use the shadow Gradle plugin
     // Shadow is used to take all of your dependencies and turn them into
     // a single .jar file which you can run and execute
-    classpath "com.github.jengelman.gradle.plugins:shadow:2.0.1"
+    classpath "com.github.jengelman.gradle.plugins:shadow:5.0.0"
   }
 }
 
@@ -30,8 +30,8 @@ allprojects {
   apply plugin: "java"
 
   // Use Java 8 as the source version to build with, and the goal/target version
-  sourceCompatibility = "1.8"
-  targetCompatibility = "1.8"
+  sourceCompatibility = "1.10"
+  targetCompatibility = "1.10"
 }
 
 // All projects, but excludes the root project
@@ -66,7 +66,8 @@ project(":dropwizard-template") {
     compile "com.google.guava:guava:$guavaVersion"
 
     // Lombok has some annotations that can save some time
-    compile "org.projectlombok:lombok:$lombokVersion"
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
     // Dropwizard is the web server. It handles receiving and responding to
     // requests and such

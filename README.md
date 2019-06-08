@@ -8,7 +8,7 @@ template for getting started.
 
 ### Prerequisites
 
-Requires Java 8 and Gradle 4.4 to be installed.
+Requires Java 10 and Gradle 5.4.1 to be installed.
 
 ### Build Instructions
 ```
