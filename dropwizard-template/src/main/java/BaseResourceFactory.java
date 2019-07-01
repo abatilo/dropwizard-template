@@ -1,5 +1,9 @@
 import io.dropwizard.setup.Environment;
 
+import com.codahale.metrics.MetricRegistry;
+
+import io.prometheus.client.CollectorRegistry;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,5 +26,8 @@ public class BaseResourceFactory {
 
     @Getter(AccessLevel.PUBLIC)
     private final RootResource rootResource = new RootResource();
+
+    @Getter(AccessLevel.PUBLIC)
+    private final CollectorRegistry collectorRegistry = new CollectorRegistry();
   }
 }

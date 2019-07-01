@@ -2,6 +2,9 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import io.prometheus.client.dropwizard.DropwizardExports;
+import io.prometheus.client.exporter.MetricsServlet;
+
 import lombok.SneakyThrows;
 
 public class DropwizardApplication
@@ -13,6 +16,11 @@ public class DropwizardApplication
     BaseResourceFactory.ResourceFactory resources =
       new BaseResourceFactory.ResourceFactory(config, env);
     env.jersey().register(resources.getRootResource());
+
+    resources.getCollectorRegistry().register(new DropwizardExports(env.metrics()));
+    env.admin().addServlet("Prometheus metrics", new
+        MetricsServlet(resources.getCollectorRegistry()))
+      .addMapping("/metrics-text");
   }
 
   @SneakyThrows

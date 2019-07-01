@@ -2,6 +2,8 @@ ext {
   guavaVersion = "27.1-jre"
   lombokVersion = "1.18.8"
   dropWizardVersion = "1.3.12"
+  dropWizardMetricsVersion = "4.1.0"
+  prometheusSimpleClientVersion = "0.6.0"
   junitVersion = "5.4.2"
 }
 
@@ -72,6 +74,10 @@ project(":dropwizard-template") {
     // Dropwizard is the web server. It handles receiving and responding to
     // requests and such
     compile "io.dropwizard:dropwizard-core:$dropWizardVersion"
+    compile "io.dropwizard.metrics:metrics-core:$dropWizardMetricsVersion"
+
+    compile "io.prometheus:simpleclient_dropwizard:$prometheusSimpleClientVersion"
+    compile "io.prometheus:simpleclient_servlet:$prometheusSimpleClientVersion"
 
     // JUnit is a unit testing framework
     testCompile "junit:junit:$junitVersion"
