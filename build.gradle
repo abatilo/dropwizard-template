@@ -32,8 +32,8 @@ allprojects {
   apply plugin: "java"
 
   // Use Java 8 as the source version to build with, and the goal/target version
-  sourceCompatibility = "1.11"
-  targetCompatibility = "1.11"
+  sourceCompatibility = "1.8"
+  targetCompatibility = "1.8"
 }
 
 // All projects, but excludes the root project

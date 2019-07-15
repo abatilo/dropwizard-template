@@ -1,11 +1,11 @@
-FROM openjdk:11-jdk as builder
+FROM openjdk:8u212-jdk-slim as builder
 
 WORKDIR /source
 COPY . /source
 
 RUN ./gradlew shadowJar
 
-FROM openjdk:11-jdk
+FROM openjdk:8u212-jre-slim
 WORKDIR /app
 COPY --from=builder /source/dropwizard-template/root.jar /source/dropwizard-template/local.yaml ./
 
