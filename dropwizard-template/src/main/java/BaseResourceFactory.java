@@ -29,5 +29,8 @@ public class BaseResourceFactory {
 
     @Getter(AccessLevel.PUBLIC)
     private final CollectorRegistry collectorRegistry = new CollectorRegistry();
+
+    @Getter(AccessLevel.PUBLIC)
+    private final BasicHealthCheck basicHealthCheck = new BasicHealthCheck();
   }
 }

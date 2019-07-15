@@ -15,6 +15,9 @@ public class DropwizardApplication
     throws Exception {
     BaseResourceFactory.ResourceFactory resources =
       new BaseResourceFactory.ResourceFactory(config, env);
+
+    env.healthChecks().register("BasicHealthCheck", resources.getBasicHealthCheck());
+
     env.jersey().register(resources.getRootResource());
 
     resources.getCollectorRegistry().register(new DropwizardExports(env.metrics()));
