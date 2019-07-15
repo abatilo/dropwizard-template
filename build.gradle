@@ -61,6 +61,13 @@ project(":dropwizard-template") {
     archiveName = "root.jar"
     // Where to put it, in this case, inside the current project directory
     destinationDir projectDir
+
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    manifest {
+      attributes("Main-Class": mainClassName)
+    }
   }
 
   dependencies {
@@ -75,6 +82,7 @@ project(":dropwizard-template") {
     // requests and such
     compile "io.dropwizard:dropwizard-core:$dropWizardVersion"
     compile "io.dropwizard.metrics:metrics-core:$dropWizardMetricsVersion"
+    compile "io.dropwizard:dropwizard-json-logging:1.3.12"
 
     compile "io.prometheus:simpleclient_dropwizard:$prometheusSimpleClientVersion"
     compile "io.prometheus:simpleclient_servlet:$prometheusSimpleClientVersion"

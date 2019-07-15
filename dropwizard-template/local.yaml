@@ -1,1 +1,11 @@
 version: "1.0.0"
+
+logging:
+  appenders:
+    - type: console
+      layout:
+        type: json
+
+server:
+  requestLog:
+    appenders: []
