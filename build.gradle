@@ -1,12 +1,3 @@
-ext {
-  guavaVersion = "27.1-jre"
-  lombokVersion = "1.18.8"
-  dropWizardVersion = "1.3.12"
-  dropWizardMetricsVersion = "4.1.0"
-  prometheusSimpleClientVersion = "0.6.0"
-  junitVersion = "5.4.2"
-}
-
 buildscript {
   repositories {
     // Which websites to look for the Gradle dependencies to download
@@ -72,22 +63,22 @@ project(":dropwizard-template") {
 
   dependencies {
     // Guava has a bunch of nice to have functions that make things easier
-    compile "com.google.guava:guava:$guavaVersion"
+    compile "com.google.guava:guava:27.1-jre"
 
     // Lombok has some annotations that can save some time
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    compileOnly("org.projectlombok:lombok:1.18.8")
+    annotationProcessor("org.projectlombok:lombok:1.18.8")
 
     // Dropwizard is the web server. It handles receiving and responding to
     // requests and such
-    compile "io.dropwizard:dropwizard-core:$dropWizardVersion"
-    compile "io.dropwizard.metrics:metrics-core:$dropWizardMetricsVersion"
+    compile "io.dropwizard:dropwizard-core:1.3.12"
+    compile "io.dropwizard.metrics:metrics-core:4.1.0"
     compile "io.dropwizard:dropwizard-json-logging:1.3.12"
 
-    compile "io.prometheus:simpleclient_dropwizard:$prometheusSimpleClientVersion"
-    compile "io.prometheus:simpleclient_servlet:$prometheusSimpleClientVersion"
+    compile "io.prometheus:simpleclient_dropwizard:0.6.0"
+    compile "io.prometheus:simpleclient_servlet:0.6.0"
 
     // JUnit is a unit testing framework
-    testCompile "junit:junit:$junitVersion"
+    testCompile "junit:junit:5.4.2"
   }
 }
