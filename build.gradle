@@ -7,7 +7,7 @@ buildscript {
     // For building the entire project, use the shadow Gradle plugin
     // Shadow is used to take all of your dependencies and turn them into
     // a single .jar file which you can run and execute
-    classpath "com.github.jengelman.gradle.plugins:shadow:5.0.0"
+    classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0"
   }
 }
 
