@@ -4,5 +4,5 @@ workflow "Build project" {
 }
 
 action "Build container" {
-  uses = "./build-action/"
+  uses = "./.github/build-action/"
 }
