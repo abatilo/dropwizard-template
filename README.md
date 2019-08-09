@@ -8,17 +8,32 @@ template for getting started.
 
 ## Getting Started
 
-### Prerequisites
-
-Requires Java 11 and Gradle 5.4.1 to be installed.
-
-### Build Instructions
+Run `make help` to get started:
 ```
-git clone https://github.com/abatilo/dropwizard-template.git
-cd dropwizard-template
-./gradlew :dropwizard-template:clean :dropwizard-template:shadowJar
-java -jar dropwizard-template/root.jar server dropwizard-template/local.yaml
+⇒  make help
+help                           View help information
+test                           Runs tests
+run                            Run the application locally
+build                          Builds a container
+clean                          Deletes used containers and volumes
 ```
+
+## Operations
+
+### Healthchecks
+Healthchecks are available at:
+```
+curl http://localhost:8081/healthcheck
+```
+
+### Metrics
+Prometheus format metrics are available at:
+```
+curl http://localhost:8081/metrics-text
+```
+
+**Note**: The metrics server is running on a different servlet than the main application
+to mitigate any interference.
 
 ## Built With
 

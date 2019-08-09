@@ -46,6 +46,10 @@ project(":dropwizard-template") {
   // qualified package name here.
   mainClassName = "DropwizardApplication"
 
+  run {
+    args = ['server', 'local.yaml']
+  }
+
   // Configurations for what the shadow plugin will create
   shadowJar {
     // The name of the file to create
