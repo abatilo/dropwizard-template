@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+
+name: CI
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Push container
+      uses: ./.github/make/
+      with:
+        args: build
