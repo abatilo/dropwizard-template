@@ -1,0 +1,10 @@
+on: push
+name: Build project
+jobs:
+  buildContainer:
+    name: Build container
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build container
+      uses: ./.github/build-action/
