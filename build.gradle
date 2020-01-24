@@ -80,7 +80,7 @@ project(":dropwizard-template") {
     compile "io.dropwizard:dropwizard-json-logging:1.3.14"
 
     compile "io.prometheus:simpleclient_dropwizard:0.6.0"
-    compile "io.prometheus:simpleclient_servlet:0.6.0"
+    compile "io.prometheus:simpleclient_servlet:0.8.1"
 
     // JUnit is a unit testing framework
     testCompile "junit:junit:5.4.2"
