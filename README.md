@@ -1,6 +1,6 @@
 # dropwizard-template
 
-[![Actions Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/abatilo/dropwizard-template?style=flat)](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/abatilo/dropwizard-template?branch=master)
+![CI](https://github.com/abatilo/dropwizard-template/workflows/CI/badge.svg)
 
 I like using Dropwizard as my http server as choice. I use it a lot and every
 time, I copy common files from other projects. I figure I might as well make a
