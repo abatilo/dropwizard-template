@@ -79,7 +79,7 @@ project(":dropwizard-template") {
     compile "io.dropwizard.metrics:metrics-core:4.1.10.1"
     compile "io.dropwizard:dropwizard-json-logging:2.0.11"
 
-    compile "io.prometheus:simpleclient_dropwizard:0.6.0"
+    compile "io.prometheus:simpleclient_dropwizard:0.9.0"
     compile "io.prometheus:simpleclient_servlet:0.9.0"
 
     // JUnit is a unit testing framework
