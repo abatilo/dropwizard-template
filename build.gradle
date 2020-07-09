@@ -67,7 +67,7 @@ project(":dropwizard-template") {
 
   dependencies {
     // Guava has a bunch of nice to have functions that make things easier
-    compile "com.google.guava:guava:28.0-jre"
+    compile "com.google.guava:guava:29.0-jre"
 
     // Lombok has some annotations that can save some time
     compileOnly("org.projectlombok:lombok:1.18.8")
