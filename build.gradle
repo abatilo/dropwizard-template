@@ -75,7 +75,7 @@ project(":dropwizard-template") {
 
     // Dropwizard is the web server. It handles receiving and responding to
     // requests and such
-    compile "io.dropwizard:dropwizard-core:2.0.11"
+    compile "io.dropwizard:dropwizard-core:2.0.12"
     compile "io.dropwizard.metrics:metrics-core:4.1.11"
     compile "io.dropwizard:dropwizard-json-logging:2.0.12"
 
