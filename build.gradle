@@ -70,7 +70,7 @@ project(":dropwizard-template") {
     compile "com.google.guava:guava:29.0-jre"
 
     // Lombok has some annotations that can save some time
-    compileOnly("org.projectlombok:lombok:1.18.14")
+    compileOnly("org.projectlombok:lombok:1.18.16")
     annotationProcessor("org.projectlombok:lombok:1.18.14")
 
     // Dropwizard is the web server. It handles receiving and responding to
